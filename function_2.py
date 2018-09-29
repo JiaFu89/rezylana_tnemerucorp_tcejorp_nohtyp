@@ -1,6 +1,21 @@
 import data_holder
 import os
 
+#User Input
+userInput = raw_input("Enter the name of the file: ")
+
+#CSV file name
+Procurement_CSV_File = "government-procurement-via-gebiz.csv"
+
+#file invalid
+if not os.path.isfile(Procurement_CSV_File):
+    print("File does not exist. Please enter valid file.".format(Procurement_CSV_File))
+
+#Read CSV File
+with open('government-procurement-via-gebiz.csv') as key:
+    key.readline()
+    userInput = key.read()
+key.close()
 
 def createFolder():
     test = './new python2/'
@@ -11,21 +26,28 @@ def createFolder():
         print ('Error: Creating directory. ' + test)
 
 agencylist = []
-# Example
+
 def writetxt():
     for i in agencylist:
-        file = open(os.path.join(test,i+".txt", "w"))
+        file = open(os.path.join(createFolder(),i+".txt", "w"))
         file.write(i)
-        file.write("This is our next text file")
-        file.write("and this is anotherline.")
-        file.write("Why? Because we can.")
 
         file.close()
-
 
 def txtdetails():
     agency_to_procurements = data_holder.create_dict_for_list(data_holder.procurements, 'agency')
     for agency in agency_to_procurements:
         agencylist.append(agency)
-        # print agency
 
+        file1 = open(completeName, "w")
+        toFile = raw_input("Write what you want into the field")
+
+        file1.write(toFile)
+        #print the field names
+        print ''.join(toFile)
+
+        #print out each column of a row
+        for column in row:
+            print("", column)
+
+        file1.close()
