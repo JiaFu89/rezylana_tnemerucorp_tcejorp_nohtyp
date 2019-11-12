@@ -13,4 +13,4 @@ def generate_stats():
     result.append("FUNCTION 5 START")
     result.append(function_5())
     result.append("FUNCTION 5 END")
-    return '\n'.join(result)
+    return '\n'.join(result)1
